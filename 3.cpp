@@ -5,7 +5,6 @@
 #include <random>
 
 using namespace std;
-
 int main() {
     // Инициализация генератора случайных чисел
     random_device rd;

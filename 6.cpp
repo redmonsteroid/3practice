@@ -10,7 +10,17 @@ struct Survivor {
     string name;
     int catches;
 };
+void gameresult(bool all_caught, const vector<Survivor>& survivors) {
+    if (all_caught) {
+        cout << "The hunter has won! All survivors have been caught 3 times." << endl;
+    } else {
+        cout << "Current status of catches:" << endl;
+        for (const auto& survivor : survivors) {
+            cout << survivor.name << " has been caught " << survivor.catches << " times." << endl;
+        }
+    }
 
+}
 int main() {
     vector<Survivor> survivors = {
         {"Dwight", 0},
@@ -39,14 +49,7 @@ int main() {
     });
 
     // Вывод результатов
-    if (all_caught) {
-        cout << "The hunter has won! All survivors have been caught 3 times." << endl;
-    } else {
-        cout << "Current status of catches:" << endl;
-        for (const auto& survivor : survivors) {
-            cout << survivor.name << " has been caught " << survivor.catches << " times." << endl;
-        }
-    }
+    gameresult(all_caught, survivors);
 
     return 0;
 }
